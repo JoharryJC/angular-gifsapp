@@ -1,19 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SidebarComponent } from './sidebar/sidebar.component';
+import { GifsPageComponent } from './gifs-page/gifs-page.component';
 
 
 
 @NgModule({
   declarations: [
-    SidebarComponent
+    GifsPageComponent
   ],
   exports: [
-    SidebarComponent
-  ],
+    GifsPageComponent 
+  ], 
   imports: [
     CommonModule
   ]
 })
-
-export class SharedModule { }
+export class GifsModule { }
