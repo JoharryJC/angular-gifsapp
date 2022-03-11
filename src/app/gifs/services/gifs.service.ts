@@ -20,7 +20,7 @@ export class GifsService {
  }
 
  constructor (private http: HttpClient) {
-
+    this._historial = JSON.parse(localStorage.getItem("historial") !) || [];
  }
 
  buscarGifs(query: string) {
@@ -30,6 +30,8 @@ export class GifsService {
     if (!this._historial.includes(query)) {
         this._historial.unshift(query); 
         this._historial = this._historial.splice(0, 10);
+
+        localStorage.setItem("historial", JSON.stringify(this._historial));
     }
 
     //console.log(this._historial); 
